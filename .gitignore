@@ -5,3 +5,4 @@ __pycache__
 .git
 model
 musicgen_out.wav
+musicgen-large

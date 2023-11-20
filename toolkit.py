@@ -2,6 +2,7 @@ from transformers import AutoProcessor, MusicgenForConditionalGeneration
 import scipy
 import streamlit as st
 from typing import Optional
+from random import randint
 
 @st.cache_resource
 def load_model():
@@ -54,4 +55,4 @@ def generate_values(model,
 def generate_wav_file(model, audio_values):
 
     sampling_rate = model.config.audio_encoder.sampling_rate
-    scipy.io.wavfile.write("musicgen_out.wav", rate=sampling_rate, data=audio_values[0, 0].numpy())
+    scipy.io.wavfile.write(f"musicgen_out.wav", rate=sampling_rate, data=audio_values[0, 0].numpy())
